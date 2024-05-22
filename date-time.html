@@ -1,0 +1,107 @@
+<!-- <!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Input de Fecha y Hora</title>
+</head>
+
+<body>
+    <form id="fechaForm">
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha">
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora">
+        <button type="submit">Mostrar Fecha y Hora</button>
+    </form>
+    <div id="resultado"></div>
+
+    <script>
+        document.getElementById('fechaForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Obtener los valores de los inputs
+            let fecha = document.getElementById('fecha').value;
+            let hora = document.getElementById('hora').value;
+
+            // Comprobar si los valores no están vacíos
+            if (!fecha || !hora) {
+                document.getElementById('resultado').textContent = 'Por favor, selecciona una fecha y una hora.';
+                return;
+            }
+
+            // Crear un objeto Date usando los valores de los inputs
+            let fechaHora = new Date(`${fecha}T${hora}`);
+
+            // Mostrar la fecha y hora en formato local
+            document.getElementById('resultado').textContent = `Fecha y hora local: ${fechaHora.toLocaleString()}`;
+
+            // Convertir la fecha y hora a UTC
+            let fechaHoraUTC = new Date(fechaHora.toISOString());
+
+            // Mostrar la fecha y hora en formato UTC
+            document.getElementById('resultado').textContent += `\nFecha y hora UTC: ${fechaHoraUTC.toUTCString()}`;
+        });
+    </script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captura de Fecha y Hora</title>
+</head>
+
+<body>
+    <form id="fechaForm">
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha">
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora">
+        <button type="submit">Mostrar Fecha y Hora</button>
+    </form>
+    <div id="resultado"></div>
+
+    <script>
+        document.getElementById('fechaForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Obtener los valores de los inputs
+            let fecha = document.getElementById('fecha').value;
+            let hora = document.getElementById('hora').value;
+
+            // Comprobar si los valores no están vacíos
+            if (!fecha || !hora) {
+                document.getElementById('resultado').textContent = 'Por favor, selecciona una fecha y una hora.';
+                return;
+            }
+
+            // Crear un objeto Date usando los valores de los inputs
+            let fechaHora = new Date(`${fecha}T${hora}`);
+            console.warn(`fechaHora > ${fechaHora}`);
+
+            // Capturar el horario actual en que se realiza el registro
+            let horarioRegistro = new Date();
+            console.warn(`horarioRegistro > ${horarioRegistro}`);
+
+            // Mostrar la fecha y hora seleccionada en formato local
+            document.getElementById('resultado').textContent = `Fecha y hora seleccionada: ${fechaHora.toLocaleString()}`;
+
+            // Mostrar la fecha y hora en formato UTC
+            document.getElementById('resultado').textContent += `\nFecha y hora seleccionada (UTC): ${fechaHora.toUTCString()}`;
+
+            // Mostrar el horario exacto en que se realiza el registro en formato local
+            document.getElementById('resultado').textContent += `\nHorario de registro: ${horarioRegistro.toLocaleString()}`;
+
+            // Mostrar el horario exacto en que se realiza el registro en formato UTC
+            document.getElementById('resultado').textContent += `\nHorario de registro (UTC): ${horarioRegistro.toUTCString()}`;
+        });
+    </script>
+</body>
+
+</html>
