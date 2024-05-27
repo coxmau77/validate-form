@@ -18,7 +18,11 @@ export default function esMayorDeEdad(campo) {
     // ));
     // console.log(date.toUTCString());
     // validarEdad(fechaNacimiento);
-    console.log(validarEdad(fechaNacimiento));
+    // console.log(validarEdad(fechaNacimiento));
+
+    if (!validarEdad(fechaNacimiento)) {
+        campo.setCustomValidity("Necesitas ser mayor de edad para registrarte");
+    }
 }
 
 // vamos a validad la edad con la info que tenemos de la fecha de nacimiento
@@ -32,6 +36,9 @@ function validarEdad(fecha) {
     // console.info(fecha.getUTCDate());
     // console.info(fechaMas18);
     // console.info(fechaActual);
+    // console.log("today>>", fechaActual)
+    // console.log(new Date(fecha.getUTCFullYear()))
+    // console.log(fechaMas18)
 
     return fechaActual >= fechaMas18;
 }

@@ -13,11 +13,13 @@ export default function esUnCuil(campo) {
 
     if (tieneNumerosRepetidos(cuil)) {
         console.warn(`hay valores repetidos ${cuil}`);
+        campo.setCustomValidity("Los valores NO pueden estar repetidos");
     } else {
         if (validarPrimerosDigitos(cuil) && validarDigitoVerificador(cuil)) {
             console.log(`cuil valido ${cuil}`);
         } else {
             console.error(`Cuil no existe ${cuil}`);
+            campo.setCustomValidity(`Cuil ${cuil} ingresado no existe o no es valido`);
         }
     }
 }

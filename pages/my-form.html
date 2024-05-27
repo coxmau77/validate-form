@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- <html lang="es-AR" class="dark"> -->
+<html lang="es-AR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my form</title>
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/my-form.css">
+</head>
+
+<body>
+    <form data-formulario>
+        <!-- Campo nombre -->
+        <fieldset>
+            <input type="text" name="nombre" id="nombre" class="campo__completo" minlength="3" placeholder="Nombre"
+                autofocus required />
+            <small></small>
+        </fieldset>
+        <!-- Campo email -->
+        <fieldset>
+            <input type="email" name="email" id="email" class="campo__completo" placeholder="Email" required />
+            <small></small>
+        </fieldset>
+        <!-- Campo identificacion -->
+        <fieldset>
+            <input type="text" name="identificacion" id="identificacion" class="campo__completo" minlength="8"
+                placeholder="Identificacion" required />
+            <small></small>
+        </fieldset>
+        <!-- Campo cuil/cuit -->
+        <fieldset>
+            <input type="text" name="cuil" id="cuil" placeholder="Formato: 12-12345678-1 o 12/12345678/1"
+                pattern="\d{2}-?\d{8}-?\d{1}" minlength="10" maxlength="14" required />
+            <small></small>
+        </fieldset>
+        <!-- Campo fecha nacimiento / edad -->
+        <fieldset>
+            <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" required />
+            <small></small>
+        </fieldset>
+        <!-- Terminos y condiciones -->
+        <fieldset class="formulario__terminos">
+            <p class="terminos__texto">
+                He leído y conozco las condiciones para el tratamiento de mis datos descrito en las
+                <a href="#">Políticas de Privacidad</a>.
+            </p>
+            <input type="checkbox" name="terminos" class="terminos__input" required />
+            <small></small>
+        </fieldset>
+        <!-- Boton enviar -->
+        <div>
+            <input type="submit" value="Siguiente" id="enviar" data-boton-enviar />
+            <small></small>
+        </div>
+    </form>
+    <script type="module" src="../scripts/index.js"></script>
+</body>
+
+</html>
