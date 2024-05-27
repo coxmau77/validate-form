@@ -12,7 +12,7 @@
     valid: "Validitystate message - valid",
     valueMissing: "Validitystate message - valueMissing"
 }*/
-export const errorType = ["badInput", "customError", "patternMismatch", "rangeOverflow", "rangeUnderflow", "stepMismatch", "tooLong", "tooShort", "typeMismatch", "valid", "valueMissing"];
+export const errorType = ["regexerror", "badInput", "customError", "patternMismatch", "rangeOverflow", "rangeUnderflow", "stepMismatch", "tooLong", "tooShort", "typeMismatch", "valid", "valueMissing"];
 export const errorMessage = {
     nombre: {
         badInput: "mensaje badInput error",
@@ -22,10 +22,11 @@ export const errorMessage = {
         rangeUnderflow: "mensaje personalizado segun el error - rangeUnderflow",
         stepMismatch: "mensaje personalizado segun el error",
         tooLong: "mensaje personalizado segun el error - stepMismatch",
-        tooShort: "Por favor, el nombre debe se rmayor a 3 caracteres.",
+        tooShort: `Por favor, el nombre debe ser mayor a 3 caracteres.`,
         typeMismatch: "Por favor, introduce un nombre válido.",
         valid: "mensaje personalizado segun el error - valid",
         valueMissing: "El campo nombre no puede estar vacío.",
+        regexerror: "no regex"
     },
     email: {
         valueMissing: "El campo email no puede estar vacío.",

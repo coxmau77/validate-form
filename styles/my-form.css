@@ -4,14 +4,13 @@
     --accent-clr: yellowgreen;
 }
 
+html.dark {
+    --bg-clr: #242424;
+    --txt-clr: #ebebeb;
+}
+
 html {
     background-color: var(--bg-clr);
     accent-color: var(--accent-clr);
     color: var(--txt-clr);
-}
-
-html.dark {
-    --bg-clr: #242424;
-    --txt-clr: #ebebeb;
-    --accent-clr: yellowgreen;
 }

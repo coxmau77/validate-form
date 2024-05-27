@@ -1,5 +1,5 @@
 // import { validateInputName } from "./validate.name.js";+
-import validateInputName from "./validate.name.js";
+import validateName from "./validate.name.js";
 import validateCuil from "./validate.cuil.js";
 import validateAge from "./validate.age.js";
 import { errorType, errorMessage } from "./custom.error.js";
@@ -22,10 +22,9 @@ function inputCheck(input) {
     const txtRegex = /^[A-Za-z\s]+$/;
     const inputNameList = Object.keys(errorMessage);
     let messageError = "";
-    // input.setCustomValidity("");
+    input.setCustomValidity("");
 
     // --
-    // console.info(input.value, txtRegex.test(input.value), inputNameList.includes(input.name));
 
     // if (inputNameList.includes(input.name) && txtRegex.test(input.value)) {
     //     // console.info(input.name);
@@ -35,6 +34,16 @@ function inputCheck(input) {
     // } else {
     //     console.error("no se valida regex", inputNameList.includes(input.name) && txtRegex.test(input.value))
     // }
+
+    // validar nombre
+    if (txtRegex.test(input.value)) {
+        console.info("input.value:", input.value, "txtRegex.test(input.value):", txtRegex.test(input.value), "inputNameList.includes(input.name)", inputNameList.includes(input.name));
+        console.log(input.validity)
+        // input.validity = {
+        //     regexerror: true
+        // };
+    }
+
 
     // Validar cuil
     if (input.name === 'cuil' && input.value.length >= 11) {
