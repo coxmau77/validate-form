@@ -58,3 +58,4 @@ const mensajes = {
 04 - 02 Validity State
 04 - 05 Imprimiendo errores I
 04 - 07 Imprimiendo errores II
+04 - 09 LocalStorage

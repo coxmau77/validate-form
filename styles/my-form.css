@@ -1,7 +1,7 @@
 :root {
     --bg-clr: #ebebeb;
     --txt-clr: #242424;
-    --accent-clr: yellowgreen;
+    --accent-clr: hotpink;
 }
 
 html.dark {
@@ -13,4 +13,22 @@ html {
     background-color: var(--bg-clr);
     accent-color: var(--accent-clr);
     color: var(--txt-clr);
+}
+
+.active a {
+
+    color: var(--txt-clr);
+    background-color: var(--accent-clr);
+}
+
+a {
+    text-decoration: none;
+
+    color: var(--accent-clr)
+}
+
+a:hover {
+    background-color: var(--txt-clr);
+    color: var(--bg-clr);
+
 }
