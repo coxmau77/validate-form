@@ -61,4 +61,5 @@ const mensajes = {
 04 - 09 LocalStorage
 05 - 02 Iniciar camara
 05 - 03 Capturar foto
+05 - 05 Guardar foto
 

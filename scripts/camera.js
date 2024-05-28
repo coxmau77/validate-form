@@ -2,11 +2,12 @@ const botonAbrirCamara = document.querySelector('[data-video-boton]');
 const video = document.querySelector('[data-video]');
 
 const campoCamara = document.querySelector('[data-camera]');
-
 const tomarFoto = document.querySelector('[data-tomar-foto]');
 const dataMje = document.querySelector('[data-mensaje]');
 const dataVideoCanvas = document.querySelector('[data-video-canvas]');
 let imgUrl = '';
+
+const botonEnviar = document.querySelector('[data-enviar]');
 
 botonAbrirCamara.addEventListener('click', async () => {
     try {
@@ -49,4 +50,13 @@ tomarFoto.addEventListener('click', () => {
     imgUrl = dataVideoCanvas.toDataURL('image/jpeg');
     // campoCamara.style.display = 'none';
     dataMje.style.display = 'block'
+});
+
+botonEnviar.addEventListener('click', () => {
+    const recibirDatos = localStorage.getItem('registro');
+    const convertirDatos = JSON.parse(recibirDatos);
+    convertirDatos.img_url = imgUrl;
+    localStorage.setItem('registro', JSON.stringify(convertirDatos));
+
+    window.location.href = './my-form-step-II.html';
 });

@@ -1,4 +1,3 @@
-
 import validateName from "./validate.name.js";
 import validateCuil from "./validate.cuil.js";
 import validateAge from "./validate.age.js";
