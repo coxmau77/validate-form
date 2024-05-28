@@ -4,6 +4,9 @@ const video = document.querySelector('[data-video]');
 const campoCamara = document.querySelector('[data-camera]');
 
 const tomarFoto = document.querySelector('[data-tomar-foto]');
+const dataMje = document.querySelector('[data-mensaje]');
+const dataVideoCanvas = document.querySelector('[data-video-canvas]');
+let imgUrl = '';
 
 botonAbrirCamara.addEventListener('click', async () => {
     try {
@@ -39,4 +42,11 @@ botonAbrirCamara.addEventListener('click', async () => {
         }
         alert('No se pudo acceder a la cámara. Asegúrate de haber otorgado los permisos necesarios en el navegador.');
     }
+});
+
+tomarFoto.addEventListener('click', () => {
+    dataVideoCanvas.getContext('2d').drawImage(video, 0, 0, dataVideoCanvas.clientWidth, dataVideoCanvas.height);
+    imgUrl = dataVideoCanvas.toDataURL('image/jpeg');
+    // campoCamara.style.display = 'none';
+    dataMje.style.display = 'block'
 });
