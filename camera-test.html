@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acceso a la Cámara</title>
+    <link rel="shortcut icon" href="#" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -35,19 +37,27 @@
         button {
             padding: 10px 20px;
             font-size: 16px;
+            margin: 0 10px;
+        }
+
+        #capturedImage {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: none;
         }
     </style>
 </head>
 
 <body>
-    <!-- <button id="startButton">Iniciar Cámara</button>
-    <video id="videoElement" width="600" height="400" autoplay></video> -->
-
     <div id="videoContainer">
         <video id="videoElement" autoplay playsinline></video>
         <div id="controls">
             <button id="startButton">Iniciar Cámara</button>
+            <button id="captureButton" disabled>Capturar Imagen</button>
         </div>
+        <img id="capturedImage" alt="Imagen Capturada">
     </div>
 
     <script>
@@ -74,6 +84,9 @@
                 // Asigna el stream al elemento de video
                 const videoElement = document.getElementById('videoElement');
                 videoElement.srcObject = stream;
+
+                document.getElementById('captureButton').disabled = false;
+
             } catch (error) {
                 // Manejo de errores específicos de getUserMedia
                 if (error.name === 'NotAllowedError') {
@@ -87,6 +100,20 @@
                 }
                 alert('No se pudo acceder a la cámara. Asegúrate de haber otorgado los permisos necesarios en el navegador.');
             }
+        });
+
+        document.getElementById('captureButton').addEventListener('click', () => {
+            const videoElement = document.getElementById('videoElement');
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+
+            canvas.width = videoElement.videoWidth;
+            canvas.height = videoElement.videoHeight;
+            context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+            const img = document.getElementById('capturedImage');
+            img.src = canvas.toDataURL('image/png');
+            img.style.display = 'block';
         });
     </script>
 </body>
