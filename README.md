@@ -59,3 +59,6 @@ const mensajes = {
 04 - 05 Imprimiendo errores I
 04 - 07 Imprimiendo errores II
 04 - 09 LocalStorage
+05 - 02 Iniciar camara
+05 - 03 Capturar foto
+

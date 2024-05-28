@@ -15,7 +15,7 @@ html {
     color: var(--txt-clr);
 }
 
-.active a {
+.active {
 
     color: var(--txt-clr);
     background-color: var(--accent-clr);

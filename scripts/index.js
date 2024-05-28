@@ -20,8 +20,7 @@ form.addEventListener('submit', eventForm => {
         cuil: eventForm.target.elements['cuil'].value,
         fecha_nacimiento: eventForm.target.elements['fecha_nacimiento'].value,
     }
-    console.log(responseList);
-
+    // console.log(responseList);
     localStorage.setItem('registro', JSON.stringify(responseList));
     window.location.href = './my-form-step-I.html';
 });

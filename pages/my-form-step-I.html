@@ -11,16 +11,16 @@
 </head>
 
 <body>
-    <h1>Step one #1</h1>
-    <Ol>
+    <h1>My form step #1</h1>
+    <ol>
         <li><a href="./my-form.html">my form step #0</a></li>
-        <li class="active"><a href="./my-form-step-I.html">my form step #1</a></li>
+        <li class="active">my form step #1</li>
         <li><a href="./my-form-step-II.html">my form step #2</a></li>
         <hr>
         <label for="file"><b>my form step #1</b></label>
         <progress id="file" max="100" value="50"></progress>
         <hr>
-    </Ol>
+    </ol>
 
     <main class="container">
         <section class="formulario">
@@ -31,12 +31,12 @@
                     imagen!
                 </p>
 
-
                 <img src="../img/reconocimento.png" alt="Cara con ojos y una sonrisa dentro de un marco."
                     data-video-boton class="formulario__imagen" />
 
                 <div class="formulario__camera" data-camera>
                     <video width="320" height="240" autoplay data-video></video>
+                    <hr>
                     <button class="camera__boton" data-tomar-foto>Tomar foto</button>
                 </div>
 
@@ -51,8 +51,6 @@
             </div>
         </section>
     </main>
-    <button id="startButton">Iniciar Cámara</button>
-    <video id="videoElement" width="600" height="400" autoplay></video>
 
     <script src="../scripts/camera.js"></script>
 </body>
